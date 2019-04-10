@@ -1,0 +1,25 @@
+{
+  "name": "specter",
+  "version": "1.0.0",
+  "description": "Snapchat but better",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "sc": "browserify src/app.js -o public/js/app.js -d && electron .",
+    "compile": "browserify src/app.js -o public/js/app.js -d"
+  },
+  "author": "Vincent Davis",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^4.0.5"
+  },
+  "dependencies": {
+    "ipfs": "^0.34.4",
+    "ipfs-pubsub-room": "^1.4.1",
+    "js-ipfs": "0.0.301",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
