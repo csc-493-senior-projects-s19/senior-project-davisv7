@@ -1,25 +1,53 @@
 {
   "name": "specter",
-  "version": "1.0.0",
-  "description": "Snapchat but better",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "sc": "browserify src/app.js -o public/js/app.js -d && electron .",
-    "compile": "browserify src/app.js -o public/js/app.js -d"
-  },
-  "author": "Vincent Davis",
-  "license": "MIT",
-  "devDependencies": {
-    "electron": "^4.0.5"
-  },
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "davisv.github.io",
   "dependencies": {
-    "ipfs": "^0.34.4",
+    "foreman": "^3.0.1",
+    "gh-pages": "^2.0.1",
+    "ipfs": "^0.35.0",
     "ipfs-pubsub-room": "^1.4.1",
-    "js-ipfs": "0.0.301",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.3.1"
-  }
+    "react": "^16.8.6",
+    "react-collapsible": "^2.6.0",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8",
+    "react-scrollbars-custom": "^4.0.0-alpha.12",
+    "typescript": "^3.4.3"
+  },
+  "devDependencies": {
+    "electron": "^4.1.4",
+    "electron-builder": "^20.39.0"
+  },
+  "scripts": {
+    "dev": "nf start",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "ebuild": "yarn build && node_modules/.bin/build",
+    "deploy": "gh-pages -d build"
+  },
+  "description": "Decentralized chat app.",
+  "homepage": "./",
+  "main": "electron/main.js",
+  "build": {
+    "productName": "Specter",
+    "appId": "com.specter.electron",
+    "electronVersion": "4.1.4",
+    "files": [
+      "build/**/*",
+      "electron/*"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
